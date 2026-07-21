@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עוזר דיגיטלי - קורס הדרכה קלינית 2026</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font Assistant -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Custom Scrollbar for Chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col justify-between items-center p-2 sm:p-4">
+
+    <!-- Main Container -->
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl flex flex-col h-[95vh] overflow-hidden border border-gray-200">
+        
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 text-white p-4 flex items-center justify-between shadow-md">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white text-2xl font-bold shadow-inner">
+                    <i class="fa-solid me-0.5 fa-user-nurse"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold leading-tight">עוזר דיגיטלי - הדרכה קלינית 2026</h1>
+                    <p class="text-xs sm:text-sm text-teal-100">בית הספר האקדמי לאחיות ע"ש זיוה טל | שיבא תל השומר</p>
+                </div>
+            </div>
+            <div class="hidden sm:block text-left text-xs text-teal-200">
+                <span>מרכזת הקורס: חגית נופר</span>
+            </div>
+        </header>
+
+        <!-- Quick Action Buttons -->
+        <div class="bg-teal-50 p-2.5 border-b border-teal-100 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
+            <span class="text-teal-900 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-bolt text-amber-500 ml-1"></i>נושאים נפוצים:</span>
+            <button onclick="sendQuickReply('לוח זמנים ומערכת שעות')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
+            <button onclick="sendQuickReply('מתי המבחנים')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('מהן המטלות בקורס')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('הנחיות חיסונים ואישורים')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">💉 חיסונים ואישורים</button>
+            <button onclick="sendQuickReply('התנסות קלינית וסופרוויז\'ן')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
+            <button onclick="sendQuickReply('אנשי קשר וצוות הקורס')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
+        </div>
+
+        <!-- Chat Area -->
+        <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4 chat-scroll bg-slate-50">
+            <!-- Welcome Message -->
+            <div class="flex items-start space-x-3 space-x-reverse">
+                <div class="w-9 h-9 rounded-full bg-teal-700 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                    🤖
+                </div>
+                <div class="bg-white border border-gray-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-gray-800 text-sm sm:text-base leading-relaxed">
+                    <p class="font-bold text-teal-800 mb-1">שלום וברוכים הבאים! 👋</p>
+                    <p>אני העוזר הדיגיטלי של **השתלמות מוכרת בהדרכה קלינית 2026**.</p>
+                    <p class="mt-2">תוכלו לשאול אותי על מערכת השעות, תאריכי מבחנים ומטלות, הנחיות לחיסונים, דרישות ההתנסות הקלינית, אנשי קשר ועוד.</p>
+                    <p class="mt-2 text-xs text-gray-500">💡 טיפ: ניתן להקליד שאלה חופשית בתיבה למטה או ללחוץ על הכפתורים המהירים למעלה.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-3 bg-white border-t border-gray-200 flex items-center space-x-2 space-x-reverse">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-gray-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition">
+            <button onclick="sendMessage()" class="bg-teal-700 hover:bg-teal-800 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
+                <span>שלח</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-100 text-center py-1.5 text-[11px] text-gray-500 border-t border-gray-200">
+            מרכזת הקורס: חגית נופר | דוא"ל: hagit.nuphar@sheba.health.gov.il | טלפון: 052-6666932
+        </footer>
+    </div>
+
+    <script>
+        // Knowledge Base Built from Course Documents
+        const botKnowledge = {
+            general: {
+                keywords: ["שלום", "היי", "מה קוראים", "מי אתה", "עזרה", "קורס", "מידע"],
+                response: `<b>קורס הדרכה קלינית 2026</b><br>
+בית הספר האקדמי לאחיות ע"ש זיוה טל, המרכז הרפואי שיבא תל השומר.<br><br>
+• <b>מרכזת הקורס:</b> חגית נופר (052-6666932 | hagit.nuphar@sheba.health.gov.il)<br>
+• <b>היקף הקורס:</b> 300 שעות לימוד (176 שעות עיוניות + 124 שעות התנסות קלינית וסופרוויז'ן).<br>
+• <b>ימי לימוד:</b> ימי חמישי, 08:00–15:00.<br><br>
+במה אוכל לעזור לך היום? (מבחנים, מטלות, לוח זמנים, חיסונים, התנסות).`
+            },
+            schedule: {
+                keywords: ["לוח זמנים", "מערכת שעות", "שעות", "מתי לומדים", "שעות לימוד", "סדר יום", "חופש", "חגים", "זום", "zoom", "פגרה"],
+                response: `📅 <b>סדר יום שגרתי בימי חמישי:</b><br>
+• 08:00-09:30 – שיעור ראשון<br>
+• 09:30-09:45 – הפסקה<br>
+• 09:45-11:15 – שיעור שני<br>
+• 11:15-11:30 – הפסקה<br>
+• 11:30-13:00 – שיעור שלישי<br>
+• 13:00-13:30 – הפסקה<br>
+• 13:30-15:00 – שיעור רביעי<br><br>
+📌 <b>תאריכים מיוחדים וימי פגרה (אין לימודים בימי ה'):</b><br>
+• 19/03/26 – עיד אל פיטר<br>
+• 02/04/26 & 09/04/26 – חג הפסח<br>
+• 19/05/26 (יום ג') – <b>יום עיון מדריכים קליניים (השתתפות חובה!)</b><br>
+• 21/05/26 – חג שבועות<br>
+• 28/05/26 – עיד אל אדחה<br>
+• 20/07/26 (יום ב') – יום לימוד חלופי ל-ט' באב (23/07)<br>
+• <b>חודש אוגוסט:</b> פגרת קיץ (אין לימודים עיוניים פרונטליים).<br><br>
+💻 <b>מפגשי Zoom מקוונים מתוכננים:</b> 12/03/26 (רונית בן שחר - משוב והערכה), 11/06/26 & 25/06/26 (חגית נופר - כלי AI), 25/06/26 (עו"ד עדי ניב יגודה - חוק ומשפט), 30/07/26 (אלה שניידרמן - תוכניות טיפול).`
+            },
+            exams: {
+                keywords: ["מבחן", "מבחנים", "בחינה", "בחינות", "ממשלתי", "ציון", "ציונים", "הערכה", "מבחן מסכם", "משקל"],
+                response: `📝 <b>מבחנים והערכת הקורס:</b><br><br>
+1. <b>מבחן מסכם פנימי (מועד א'):</b> יום ה', <u>08/10/2026</u> (מהווה 50% מהציון הסופי בקורס).<br>
+2. <b>מבחן רישוי ממשלתי:</b> יום ה', <u>17/12/2026</u> (100 שאלות בכתב).<br><br>
+📊 <b>הרכב הציון המסכם בקורס:</b><br>
+• <b>50%</b> – מבחן ידע פנימי מסכם<br>
+• <b>40%</b> – התנסות קלינית (ציון עובר: 70)<br>
+• <b>10%</b> – מטלות הקורס<br><br>
+⚠️ עמידה בהצלחה במבחן הפנימי ובמטלות היא תנאי סף להגשה לבחינה הממשלתית!`
+            },
+            tasks: {
+                keywords: ["מטלה", "מטלות", "עבודה", "קונפליקט", "כלי הדרכתי", "כלי לימודי", "רפלקציה", "קהילת ידע", "הגשה", "apa", "kahoot", "mentimeter"],
+                response: `📚 <b>מטלות הקורס:</b><br><br>
+1. <b>מטלה 1: ניתוח קונפליקט בתהליכי הדרכה (בכתב):</b><br>
+• ניתוח דילמה ערכית/אתית בהדרכה הקלינית.<br>
+• הגשה בקובץ Word, פונט Arial 12, רווח 1.5, עד 500 מילים, כללי APA7.<br>
+• 📅 <b>מועד הגשה:</b> עד <u>15/10/2026</u> במייל לחגית נופר.<br><br>
+2. <b>מטלה 2: הצגת כלי הדרכתי / פעילות למידה:</b><br>
+• הצגת כלי מקורי בסופרוויז'ן (10 דק' הצגה + 5 דק' משוב עמיתים).<br>
+• 🚫 <b>דגש חשוב:</b> אין להשתמש בכלים טכנולוגיים כמו Kahoot או Mentimeter!<br><br>
+3. <b>מטלה 3: מצגת רפלקציה על ההתנסות הקלינית:</b><br>
+• מצגת הכוללת: 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות מייצגות.<br><br>
+4. <b>מטלה 4: קהילת ידע (Yammer):</b><br>
+• העלאת פוסט (כ-10 משפטים) + תגובה ל-2 פוסטים של עמיתים (כ-6 משפטים).`
+            },
+            clinical: {
+                keywords: ["התנסות", "התנסות קלינית", "סופרוויז'ן", "סופרויזן", "124 שעות", "100 שעות", "מנחה", "צפייה", "מחלקת אם"],
