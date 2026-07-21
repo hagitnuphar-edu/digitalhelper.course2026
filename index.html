@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דיגי - העוזרת הדיגיטלית | קורס הדרכה קלינית 2026</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font Assistant -->
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Assistant', sans-serif; background-color: #f0f4f8; }
         .chat-scroll::-webkit-scrollbar { width: 6px; }
-        .chat-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
         .chat-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     </style>
 </head>
 <body class="h-screen flex flex-col justify-between items-center p-2 sm:p-4">
 
-    <!-- Main Container -->
+    <!-- Container -->
     <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg flex flex-col h-[95vh] overflow-hidden border border-slate-200">
         
         <!-- Header -->
@@ -41,16 +37,16 @@
             </div>
         </header>
 
-        <!-- Quick Action Buttons -->
-        <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
+        <!-- Quick Buttons -->
+        <div class="bg-slate-50 p-2 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
             <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים:</span>
-            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
-            <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
-            <button onclick="sendQuickReply('מבחנים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
-            <button onclick="sendQuickReply('מטלות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
-            <button onclick="sendQuickReply('חיסונים וטפסים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
-            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
-            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
+            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
+            <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
+            <button onclick="sendQuickReply('מבחנים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('מטלות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('חיסונים וטפסים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
+            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
+            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3 py-1 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
         </div>
 
         <!-- Chat Area -->
@@ -60,22 +56,22 @@
                 <div class="bg-white border border-slate-200 p-3.5 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm leading-relaxed">
                     <p class="font-bold text-blue-900 mb-1">שלום וברוכים הבאים! 👋</p>
                     <p>אני <b>דיגי</b> - העוזרת הדיגיטלית של <b>קורס הדרכה קלינית 2026</b>.</p>
-                    <p class="mt-1.5">שאלו אותי שאלה חופשית (לדוגמה: <i>"מתי השיעור על בינה מלאכותית?"</i>, <i>"עד מתי מגישים את מטלה 1?"</i>, <i>"איזה שיעורים ב-Zoom?"</i>) או לחצו על הכפתורים למעלה.</p>
+                    <p class="mt-1.5">תוכלו לשאול אותי שאלות ספציפיות (כגון: <i>"מתי השיעור על בינה מלאכותית?"</i>, <i>"עד מתי מגישים את מטלה 1?"</i>, <i>"מה המייל של ענת קשטן?"</i>) או ללחוץ על הלחצנים למעלה.</p>
                 </div>
             </div>
         </div>
 
         <!-- Input Area -->
         <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2 space-x-reverse">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו שאלה כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 border-transparent transition">
-            <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו שאלה כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+            <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2 rounded-xl font-semibold text-sm transition flex items-center justify-center space-x-1 space-x-reverse shadow">
                 <span>שלח</span>
                 <i class="fa-solid fa-paper-plane text-xs mr-1"></i>
             </button>
         </div>
 
         <!-- Footer -->
-        <footer class="bg-slate-100 text-center py-1.5 text-[11px] text-slate-500 border-t border-slate-200">
+        <footer class="bg-slate-100 text-center py-1 text-[11px] text-slate-500 border-t border-slate-200">
             דיגי | מרכזת הקורס: חגית נופר | 052-6666932 | hagit.nuphar@sheba.health.gov.il
         </footer>
     </div>
@@ -88,7 +84,7 @@
             },
             {
                 keywords: ["אלה קורן", "פער הדורות", "פערי הדורות", "כבוד ויושרה"],
-                response: `👩‍🏫 <b>מפגשים עם ד"ר אלה קורן:</b><br>• <b>פער הדורות:</b> 29/01/2026<br>• <b>כבוד ויושרה:</b> 19/02/2026<br>• <b>קונפליקטים מוסריים:</b> 02/07/2026 ו-09/07/2026.`
+                response: `👩‍🏫 <b>שיעורים עם ד"ר אלה קורן:</b><br>• <b>פער הדורות:</b> 29/01/2026<br>• <b>כבוד ויושרה:</b> 19/02/2026<br>• <b>קונפליקטים מוסריים:</b> 02/07/2026 ו-09/07/2026.`
             },
             {
                 keywords: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט"],
@@ -112,11 +108,11 @@
             },
             {
                 keywords: ["זום", "zoom", "מקוון", "שיעורי זום"],
-                response: `💻 <b>מפגשי Zoom מתוכננים:</b><br>• <b>12/03/26:</b> משוב והערכה (רונית בן שחר)<br>• <b>11/06/26 & 06/08/26:</b> תוכניות טיפול (אלה שניידרמן)<br>• <b>11/06/26, 25/06/26 & 06/08/26:</b> כלי בינה מלאכותית (חגית נופר)<br>• <b>25/06/26:</b> חוק ומשפט (עו"ד עדי ניב יגודה)`
+                response: `💻 <b>מפגשי Zoom בקורס:</b><br>• <b>12/03/26:</b> משוב והערכה (רונית בן שחר)<br>• <b>11/06/26 & 06/08/26:</b> תוכניות טיפול (אלה שניידרמן)<br>• <b>11/06/26, 25/06/26 & 06/08/26:</b> כלי בינה מלאכותית (חגית נופר)<br>• <b>25/06/26:</b> חוק ומשפט (עו"ד עדי ניב יגודה)`
             },
             {
                 keywords: ["סופרוויז'ן", "סופרויזן", "קבוצות סופרוויז'ן"],
-                response: `👥 <b>מפגשי סופרוויז'ן (24 שעות):</b><br>• <b>מפגש 1 (בקבוצות):</b> תאריכים לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>• <b>מפגשים 2 ו-3 (תחנות לכולם):</b> 15/10/2026 ו-22/10/2026.`
+                response: `👥 <b>מפגשי סופרוויז'ן (24 שעות):</b><br>• <b>מפגש 1 (בקבוצות):</b> תאריכים לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>• <b>מפגשים 2 ו-3 (תחנות):</b> 15/10/2026 ו-22/10/2026.`
             },
             {
                 keywords: ["מבחן מסכם", "מועד א", "פנימי", "8/10"],
@@ -168,7 +164,7 @@
             },
             {
                 keywords: ["מודל", "moodle", "סיסמה", "שם משתמש", "אתר"],
-                response: `💻 <b>מערכת Moodle:</b><br>• כתובת: www.sns.sheba.co.il<br>• שם משתמש: ת.ז. ללא ספרת ביקורת<br>• סיסמה ראשונית: תאריך לידה (6 ספרות, לדוגמה 010198)<br>• טפסים מורידים ישירות מהמודל.`
+                response: `💻 <b>מערכת Moodle:</b><br>• כתובת: www.sns.sheba.co.il<br>• שם משתמש: ת.ז. ללא ספרת ביקורת<br>• סיסמה: תאריך לידה (6 ספרות)<br>• טפסים מורידים ישירות מהמודל.`
             }
         ];
 
