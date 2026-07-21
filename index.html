@@ -57,10 +57,11 @@
         <!-- Quick Action Buttons -->
         <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
             <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים נפוצים:</span>
-            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
-            <button onclick="sendQuickReply('מבחנים וציונים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
-            <button onclick="sendQuickReply('הנחיות למטלות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
-            <button onclick="sendQuickReply('חיסונים ואישורים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
+            <button onclick="sendQuickReply('כל מערכת השעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות מלאה</button>
+            <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
+            <button onclick="sendQuickReply('תאריכי מבחנים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('מטלות הקורס')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('חיסונים וטפסים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
             <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
             <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
         </div>
@@ -75,15 +76,14 @@
                 <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
                     <p class="font-bold text-blue-900 mb-1">שלום וברוכים הבאים! 👋</p>
                     <p>אני <b>דיגי</b> - העוזרת הדיגיטלית של <b>קורס הדרכה קלינית 2026</b>.</p>
-                    <p class="mt-2">תוכלו לשאול אותי על מערכת השעות, תאריכי מבחנים ומטלות, הנחיות לחיסונים וטפסים, דרישות ההתנסות הקלינית, אנשי קשר ועוד.</p>
-                    <p class="mt-2 text-xs text-slate-500">💡 טיפ: ניתן להקליד שאלה חופשית בתיבה למטה או ללחוץ על הכפתורים המהירים למעלה.</p>
+                    <p class="mt-2">תוכלו לשאול אותי שאלות ספציפיות כמו: <i>"מתי השיעור על בינה מלאכותית?"</i>, <i>"עד מתי מגישים את מטלה 1?"</i>, <i>"איזה שיעורים מתקיימים בזום?"</i> או ללחוץ על הנושאים הנפוצים למעלה.</p>
                 </div>
             </div>
         </div>
 
         <!-- Input Area -->
         <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2 space-x-reverse">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="שאלו אותי שאלה (למשל: מתי השיעור של אלה קורן?)..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
             <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
                 <span>שלח</span>
                 <i class="fa-solid fa-paper-plane text-xs mr-1"></i>
@@ -97,189 +97,46 @@
     </div>
 
     <script>
-        // Knowledge Base Built from Course Documents
-        const botKnowledge = {
-            general: {
-                keywords: ["שלום", "היי", "מה קוראים", "מי אתה", "מי את", "דיגי", "עזרה", "קורס", "מידע", "כללי"],
-                response: `<b>קורס הדרכה קלינית 2026</b><br>
-בית הספר האקדמי לאחיות ע"ש זיוה טל, המרכז הרפואי שיבא תל השומר.<br><br>
-• <b>אני דיגי</b> - העוזרת הדיגיטלית של הקורס.<br>
-• <b>מרכזת הקורס:</b> חגית נופר (052-6666932 | hagit.nuphar@sheba.health.gov.il)<br>
-• <b>היקף הקורס:</b> 300 שעות לימוד (176 שעות עיוניות + 124 שעות התנסות קלינית וסופרוויז'ן).<br>
-• <b>ימי לימוד:</b> ימי חמישי, 08:00–15:00.<br><br>
-במה אוכל לעזור לך? (מבחנים, מטלות, לוח זמנים, חיסונים, התנסות).`
+        // Specific and Focused Knowledge Base Entries
+        const specificKnowledge = [
+            // --- Specific Schedule Topics ---
+            {
+                keywords: ["בינה מלאכותית", "ai", "איי איי", "מחשב"],
+                response: `🤖 <b>שיעור כלי בינה מלאכותית (למידה ותרגול):</b><br>
+השיעור מועבר על ידי <b>חגית נופר</b> במתכונת Zoom (יש להתחבר ממחשב).<br>
+תאריכים שנקבעו במערכת:<br>
+• יום ה', <b>11/06/2026</b><br>
+• יום ה', <b>25/06/2026</b> (בשעות 09:00–12:15)<br>
+• יום ה', <b>06/08/2026</b>`
             },
-            schedule: {
-                keywords: ["לוח זמנים", "מערכת שעות", "מערכת", "שעות", "מתי לומדים", "שעות לימוד", "סדר יום", "חופש", "חגים", "זום", "zoom", "פגרה"],
-                response: `📅 <b>סדר יום שגרתי בימי חמישי:</b><br>
-• 08:00-09:30 – שיעור ראשון<br>
-• 09:30-09:45 – הפסקה<br>
-• 09:45-11:15 – שיעור שני<br>
-• 11:15-11:30 – הפסקה<br>
-• 11:30-13:00 – שיעור שלישי<br>
-• 13:00-13:30 – הפסקה<br>
-• 13:30-15:00 – שיעור רביעי<br><br>
-📌 <b>תאריכים מיוחדים וימי פגרה (אין לימודים בימי ה'):</b><br>
-• 19/03/26 – עיד אל פיטר<br>
-• 02/04/26 & 09/04/26 – חג הפסח<br>
-• 19/05/26 (יום ג') – <b>יום עיון מדריכים קליניים (השתתפות חובה!)</b><br>
-• 21/05/26 – חג שבועות<br>
-• 28/05/26 – עיד אל אדחה<br>
-• 20/07/26 (יום ב') – יום לימוד חלופי ל-ט' באב (23/07)<br>
-• <b>חודש אוגוסט:</b> פגרת קיץ (אין לימודים עיוניים פרונטליים).<br><br>
-💻 <b>מפגשי Zoom מתוכננים:</b> 12/03/26, 11/06/26, 25/06/26, 30/07/26.`
+            {
+                keywords: ["אלה קורן", "פער הדורות", "פערי הדורות", "כבוד ויושרה"],
+                response: `👩‍🏫 <b>מפגשים עם ד"ר אלה קורן:</b><br>
+• <b>פער הדורות:</b> 29/01/2026 (מפגש פתיחה).<br>
+• <b>כבוד ויושרה:</b> יום ה', 19/02/2026.<br>
+• <b>דילמות וקונפליקטים מוסריים:</b> יום ה', 02/07/2026 ו-09/07/2026.`
             },
-            exams: {
-                keywords: ["מבחן", "מבחנים", "בחינה", "בחינות", "ממשלתי", "ציון", "ציונים", "הערכה", "מבחן מסכם", "משקל", "תנאי עובר"],
-                response: `📝 <b>מבחנים והערכת הקורס:</b><br><br>
-1. <b>מבחן מסכם פנימי (מועד א'):</b> יום ה', <u>08/10/2026</u> (משקל: 50% מהציון הסופי).<br>
-2. <b>מבחן רישוי ממשלתי:</b> יום ה', <u>17/12/2026</u> (100 שאלות אמריקאיות).<br><br>
-📊 <b>הרכב הציון המסכם בקורס:</b><br>
-• <b>50%</b> – מבחן ידע פנימי מסכם<br>
-• <b>40%</b> – התנסות קלינית (ציון עובר: 70)<br>
-• <b>10%</b> – מטלות הקורס<br><br>
-⚠️ עמידה בהצלחה במבחן הפנימי ובמטלות היא תנאי סף להגשה לבחינה הממשלתית!`
+            {
+                keywords: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט"],
+                response: `⚖️ <b>שיעור חוק ומשפט (פיתוח עשייה בהתאם לנהלים וחוקים):</b><br>
+מועבר ע"י <b>עו"ד עדי ניב יגודה</b> ב-Zoom ביום ה', <b>25/06/2026</b>.`
             },
-            tasks: {
-                keywords: ["מטלה", "מטלות", "עבודה", "קונפליקט", "כלי הדרכתי", "כלי לימודי", "רפלקציה", "הגשה", "apa", "kahoot", "mentimeter"],
-                response: `📚 <b>מטלות הקורס:</b><br><br>
-1. <b>מטלה 1: ניתוח קונפליקט בתהליכי הדרכה (בכתב):</b><br>
-• ניתוח דילמה ערכית/אתית בהדרכה הקלינית.<br>
-• קובץ Word, פונט Arial 12, רווח 1.5, עד 500 מילים, כללי APA7.<br>
-• 📅 <b>מועד הגשה:</b> עד <u>15/10/2026</u> במייל לחגית נופר.<br><br>
-2. <b>מטלה 2: הצגת כלי הדרכתי / פעילות למידה:</b><br>
-• הצגת כלי מקורי בסופרוויז'ן (10 דק' הצגה + 5 דק' משוב).<br>
-• 🚫 <b>דגש חשוב:</b> אין להשתמש בכלים טכנולוגיים כמו Kahoot או Mentimeter!<br><br>
-3. <b>מטלה 3: מצגת רפלקציה על ההתנסות הקלינית:</b><br>
-• מצגת הכוללת: 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות.`
+            {
+                keywords: ["יום עיון", "19/5", "19/05"],
+                response: `🌟 <b>יום עיון מדריכים קליניים:</b><br>
+מתקיים ביום ג', <b>19/05/2026</b>.<br>
+⚠️ <b>השתתפות חובה!</b> (נחשב על חשבון שעות ההתנסות הקלינית).`
             },
-            clinical: {
-                keywords: ["התנסות", "התנסות קלינית", "סופרוויז'ן", "סופרויזן", "124 שעות", "100 שעות", "מנחה", "צפייה", "מחלקת אם", "שדה קליני"],
-                response: `🏥 <b>התנסות קלינית וסופרוויז'ן (124 שעות סה"כ):</b><br><br>
-• <b>100 שעות:</b> יישום תוכנית הדרכה בשדה הקליני (החל מחודש מאי).<br>
-• <b>24 שעות (3 ימים):</b> מפגשי סופרוויז'ן בקבוצות קטנות וסימולציות.<br>
-• <b>מיקום ההתנסות:</b> במחלקת האם בליווי מדריך קליני מורשה (ותק שנתיים לפחות), או בתיאום מול מורת בית הספר.<br>
-• <b>הערכת ההתנסות:</b> ציון עובר הוא <b>70</b>. תחומיי "התנהגות מקצועית" ו"בטיחות" הם תנאי הכרחי לעובר!`
+            {
+                keywords: ["קונפליקט", "קונפליקטים", "איילת פדה"],
+                response: `קונפליקטים נלמדים בשני הקשרים בקורס:<br>
+1. <b>שיעור "קונפליקטים והתנגדויות" (איילת פדה):</b> יום ה', <b>16/04/2026</b>.<br>
+2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> מוגשת עד <b>15/10/2026</b> במייל לחגית נופר.`
             },
-            vaccines: {
-                keywords: ["חיסון", "חיסונים", "אישור", "אישורים", "ענת קשטן", "טופס ג", "טפסים", "טופס", "משטרה", "בטיחות", "בריאות הלומדים", "מנטו", "שחפת"],
-                response: `💉 <b>דרישות קדם, טפסים וחיסונים להתנסות הקלינית:</b><br><br>
-📥 <b>הורדת טפסים:</b> את כל הטפסים וההנחיות <u>מורידים ממערכת ה-Moodle</u> (לא ממלאים אותם אונליין במודל). לאחר ההורדה ומילוי הטפסים יש להעבירם כמפורט להלן:<br><br>
-1. <b>אישור חיסונים (טופס ג'):</b> יש להוריד מהמודל, להחתים במרפאת תעסוקה/לשכת בריאות ולהעביר לדוא"ל: <u>sheba.gimel@sheba.gov.il</u> עד חודש לפני תחילת ההתנסות.<br>
-2. <b>אישורי משטרה:</b><br>
-• אישור היעדר עבירות אלימות כלפי חסרי ישע (לכולם).<br>
-• אישור היעדר עבירות מין (לגברים בלבד).<br>
-3. <b>אישור יציאה להתנסות:</b> שליחת טופס בקשה (הורדה מהמודל) למרכזת הקורס + שיחה משולשת.<br><br>
-📞 <b>רכזת בריאות הלומדים:</b> ענת קשטן (anat.kashtan@sheba.health.gov.il).`
+            {
+                keywords: ["תכנית טיפול", "תכניות טיפול", "אלה שניידרמן"],
+                response: `📋 <b>תוכניות טיפול ככלי למידה והערכה (אלה שניידרמן):</b><br>
+מפגשי Zoom מתוכננים לתאריכים: <b>11/06/2026</b> ו-<b>06/08/2026</b>.`
             },
-            contacts: {
-                keywords: ["איש קשר", "אנשי קשר", "צוות", "טלפון", "מייל", "דואל", "חגית", "נינה", "נעמה", "מיכל", "ענת"],
-                response: `📞 <b>צוות הקורס ואנשי קשר:</b><br><br>
-• <b>מרכזת הקורס:</b> חגית נופר | 052-6666932 | hagit.nuphar@sheba.health.gov.il<br>
-• <b>בריאות הלומדים (חיסונים):</b> ענת קשטן | anat.kashtan@sheba.health.gov.il<br>
-• <b>תמיכה טכנית ו-Moodle:</b> נינה ארוטיוניאן | Nina.Arutiunian@sheba.health.gov.il<br>
-• <b>ספריה והדרכת מאגרים:</b> נעמה בריימן | Naama.Breiman@sheba.health.gov.il<br>
-• <b>שכר לימוד ומזכירות:</b> מיכל פלג | Michal.Peleg@Sheba.health.org.il`
-            },
-            moodle: {
-                keywords: ["מודל", "moodle", "סיסמה", "שם משתמש", "תמיכה", "אתר", "קישור", "טפסים במודל"],
-                response: `💻 <b>גישה למערכת Moodle (הקמפוס הדיגיטלי):</b><br><br>
-• <b>כתובת המערכת:</b> <a href="http://www.sns.sheba.co.il" target="_blank" class="text-blue-700 underline font-bold">www.sns.sheba.co.il</a><br>
-• <b>שם משתמש:</b> מספר תעודת זהות (ללא ספרת ביקורת).<br>
-• <b>סיסמה ראשונית:</b> תאריך לידה ב-6 ספרות (לדוגמה: 010198).<br>
-• 📄 <b>טפסים:</b> את כל הטפסים והנחיות החיסונים מורידים ישירות מהמודל.<br>
-• <b>תמיכה טכנית:</b> נינה ארוטיוניאן (Nina.Arutiunian@sheba.health.gov.il).`
-            }
-        };
-
-        // UI Functions
-        function sendMessage() {
-            const input = document.getElementById('userInput');
-            const text = input.value.trim();
-            if (!text) return;
-
-            addMessage(text, 'user');
-            input.value = '';
-
-            setTimeout(() => {
-                const response = getBotResponse(text);
-                addMessage(response, 'bot');
-            }, 400);
-        }
-
-        function sendQuickReply(text) {
-            addMessage(text, 'user');
-            setTimeout(() => {
-                const response = getBotResponse(text);
-                addMessage(response, 'bot');
-            }, 400);
-        }
-
-        function handleKeyPress(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        }
-
-        function addMessage(text, sender) {
-            const chatBox = document.getElementById('chatBox');
-            const msgDiv = document.createElement('div');
-            
-            if (sender === 'user') {
-                msgDiv.className = 'flex items-start justify-end space-x-3 space-x-reverse';
-                msgDiv.innerHTML = `
-                    <div class="bg-blue-800 text-white p-3.5 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] sm:max-w-[75%] text-sm sm:text-base leading-relaxed">
-                        ${escapeHTML(text)}
-                    </div>
-                    <div class="w-9 h-9 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
-                        👤
-                    </div>
-                `;
-            } else {
-                msgDiv.className = 'flex items-start space-x-3 space-x-reverse';
-                msgDiv.innerHTML = `
-                    <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
-                        🤖
-                    </div>
-                    <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
-                        ${text}
-                    </div>
-                `;
-            }
-
-            chatBox.appendChild(msgDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        function getBotResponse(input) {
-            const cleanInput = input.toLowerCase();
-            
-            for (let category in botKnowledge) {
-                const keywords = botKnowledge[category].keywords;
-                for (let word of keywords) {
-                    if (cleanInput.includes(word)) {
-                        return botKnowledge[category].response;
-                    }
-                }
-            }
-
-            return `מצטערת, לא מצאתי תשובה מדויקת לשאלה זו במאגר המידע. 😅<br><br>
-אשמח שתפנו ישירות ל<b>חגית נופר</b>, מרכזת הקורס:<br>
-📞 טלפון: 052-6666932<br>
-📧 דוא"ל: hagit.nuphar@sheba.health.gov.il`;
-        }
-
-        function escapeHTML(str) {
-            return str.replace(/[&<>'"]/g, 
-                tag => ({
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    "'": '&#39;',
-                    '"': '&quot;'
-                }[tag] || tag)
-            );
-        }
-    </script>
-</body>
-</html>
+            {
+                keywords: ["איכות ובטיחות", "דניאל בן שושן"],
