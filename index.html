@@ -7,32 +7,46 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font Assistant -->
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Assistant', sans-serif; background-color: #f0f4f8; }
-        .chat-scroll::-webkit-scrollbar { width: 6px; }
-        .chat-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
     </style>
 </head>
 <body class="h-screen flex flex-col justify-between items-center p-2 sm:p-4">
 
-    <!-- Container -->
+    <!-- Main Container -->
     <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg flex flex-col h-[95vh] overflow-hidden border border-slate-200">
         
         <!-- Header -->
         <header class="bg-gradient-to-r from-slate-800 via-indigo-900 to-blue-900 text-white p-4 flex items-center justify-between shadow-md">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="w-11 h-11 rounded-full bg-blue-500/20 border border-blue-300/30 flex items-center justify-center text-white text-xl font-bold">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-300/30 flex items-center justify-center text-white text-2xl font-bold shadow-inner">
                     <i class="fa-solid fa-robot text-blue-200"></i>
                 </div>
                 <div>
-                    <h1 class="text-lg sm:text-xl font-bold flex items-center gap-2">
+                    <h1 class="text-xl sm:text-2xl font-bold leading-tight flex items-center gap-2">
                         <span>דיגי</span>
-                        <span class="text-xs font-normal bg-blue-500/30 text-blue-100 px-2 py-0.5 rounded-full">העוזרת הדיגיטלית</span>
+                        <span class="text-xs sm:text-sm font-normal bg-blue-500/30 text-blue-100 px-2 py-0.5 rounded-full border border-blue-300/30">העוזרת הדיגיטלית</span>
                     </h1>
-                    <p class="text-xs text-blue-100/90">קורס הדרכה קלינית 2026 | ביה"ס לאחיות ע"ש זיוה טל</p>
+                    <p class="text-xs sm:text-sm text-blue-100/90">קורס הדרכה קלינית 2026 | בית הספר האקדמי לאחיות ע"ש זיוה טל</p>
                 </div>
             </div>
             <div class="hidden sm:block text-left text-xs text-blue-200/80">
@@ -40,167 +54,171 @@
             </div>
         </header>
 
-        <!-- Quick Buttons -->
+        <!-- Quick Action Buttons -->
         <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
-            <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים:</span>
-            <button onclick="sendQuickReply('תנאים מקדימים להתנסות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📋 תנאים מקדימים להתנסות</button>
-            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
-            <button onclick="sendQuickReply('מבחנים וציונים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
-            <button onclick="sendQuickReply('הנחיות למטלות')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
-            <button onclick="sendQuickReply('חיסונים ואישורים')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
-            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
-            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-700 hover:text-white text-blue-900 px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
+            <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים נפוצים:</span>
+            <button onclick="sendQuickReply('תנאים מקדימים להתנסות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📋 תנאים מקדימים להתנסות</button>
+            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
+            <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
+            <button onclick="sendQuickReply('מבחנים וציונים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('הנחיות למטלות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('חיסונים ואישורים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
+            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
+            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
         </div>
 
         <!-- Chat Area -->
         <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4 chat-scroll bg-slate-50/50">
+            <!-- Welcome Message -->
             <div class="flex items-start space-x-3 space-x-reverse">
-                <div class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-1 shadow">🤖</div>
-                <div class="bg-white border border-slate-200 p-3.5 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm leading-relaxed">
+                <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                    🤖
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
                     <p class="font-bold text-blue-900 mb-1">שלום וברוכים הבאים! 👋</p>
                     <p>אני <b>דיגי</b> - העוזרת הדיגיטלית של <b>קורס הדרכה קלינית 2026</b>.</p>
-                    <p class="mt-1.5">שאלו אותי כל שאלה בטקסט חופשי (כגון: <i>"מהם התנאים המקדימים להתנסות?"</i>, <i>"איזה אישורים צריך מראש?"</i>, <i>"איזה טפסים מורידים מהמודל?"</i>) או לחצו על הלחצנים המהירים למעלה.</p>
+                    <p class="mt-2">תוכלו לשאול אותי שאלות מפורטות על תנאי סף להתנסות, חיסונים, מערכת השעות, תאריכי מבחנים ומטלות, אנשי קשר ועוד.</p>
+                    <p class="mt-2 text-xs text-slate-500">💡 טיפ: ניתן להקליד שאלה חופשית בתיבה למטה או ללחוץ על הכפתורים המהירים למעלה.</p>
                 </div>
             </div>
         </div>
 
         <!-- Input Area -->
         <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2 space-x-reverse">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
-            <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition flex items-center justify-center space-x-1 space-x-reverse shadow">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+            <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
                 <span>שלח</span>
                 <i class="fa-solid fa-paper-plane text-xs mr-1"></i>
             </button>
         </div>
 
         <!-- Footer -->
-        <footer class="bg-slate-100 text-center py-1 text-[11px] text-slate-500 border-t border-slate-200">
-            דיגי - העוזרת הדיגיטלית | מרכזת הקורס: חגית נופר | 052-6666932 | hagit.nuphar@sheba.health.gov.il
+        <footer class="bg-slate-100 text-center py-1.5 text-[11px] text-slate-500 border-t border-slate-200">
+            דיגי - העוזרת הדיגיטלית | מרכזת הקורס: חגית נופר | דוא"ל: hagit.nuphar@sheba.health.gov.il | טלפון: 052-6666932
         </footer>
     </div>
 
     <script>
-        // Knowledge Engine
-        const kb = [
-            // --- Specific Prerequisites Category ---
-            {
-                keys: [
-                    "תנאים מקדימים", "תנאי סף", "דרישות קדם", "לפני היציאה", "אישורים להתנסות", 
-                    "יציאה להתנסות", "דרישות להתנסות", "מה צריך להגיש לפני", "תנאים להתנסות", 
-                    "אישור יציאה", "מחלקת אם", "שיחה משולשת"
-                ],
-                res: `📋 <b>תנאים מקדימים ודרישות סף להתנסות קלינית:</b><br><br>
+        // Knowledge Base Built from Course Documents
+        const botKnowledge = {
+            general: {
+                keywords: ["שלום", "היי", "מה קוראים", "מי אתה", "מי את", "דיגי", "עזרה", "קורס", "מידע", "כללי"],
+                response: `<b>קורס הדרכה קלינית 2026</b><br>
+בית הספר האקדמי לאחיות ע"ש זיוה טל, המרכז הרפואי שיבא תל השומר.<br><br>
+• <b>אני דיגי</b> - העוזרת הדיגיטלית של הקורס.<br>
+• <b>מרכזת הקורס:</b> חגית נופר (052-6666932 | hagit.nuphar@sheba.health.gov.il)<br>
+• <b>היקף הקורס:</b> 300 שעות לימוד (176 שעות עיוניות + 124 שעות התנסות קלינית וסופרוויז'ן).<br>
+• <b>ימי לימוד:</b> ימי חמישי, 08:00–15:00.<br><br>
+במה אוכל לעזור לך? (תנאים מקדימים להתנסות, מבחנים, מטלות, לוח זמנים, חיסונים, אנשי קשר).`
+            },
+            prerequisites: {
+                keywords: ["תנאים מקדימים", "תנאי סף", "דרישות קדם", "לפני היציאה להתנסות", "אישורים להתנסות", "יציאה להתנסות", "בולם"],
+                response: `📋 <b>תנאים מקדימים ודרישות חובה ליציאה להתנסות קלינית:</b><br><br>
 1. <b>אישור חיסונים תקין (טופס ג'):</b><br>
-   • את הנחיות החיסונים <u>מורידים ממערכת ה-Moodle</u>.<br>
-   • יש לגשת להחתמת מרפאה תעסוקתית/לשכת בריאות ולהעביר את טופס ג' החתום בדוא"ל ל-<u>sheba.gimel@sheba.gov.il</u> עד <b>חודש לפני תחילת ההתנסות</b>.<br>
-   • ⚠️ <i>לומד ללא אישור חיסונים תקין בתיק האישי לא יורשה להתחיל בהתנסות!</i><br><br>
-2. <b>אישורי משטרה:</b><br>
-   • <b>אישור 'בולם':</b> היעדר עבירות אלימות כלפי חסרי ישע (חובה לכל הלומדים).<br>
+   • את טופסי הרישום וההנחיות <u>מורידים ממערכת ה-Moodle</u>.<br>
+   • יש לגשת למרפאה תעסוקתית / לשכת הבריאות להחתמה על ביצוע סדרת החיסונים ו/או בדיקת נוגדנים.<br>
+   • את האישור החתום (טופס ג' בלבד) יש להעביר בדוא"ל לכתובת: <u>sheba.gimel@sheba.gov.il</u> עד <b>חודש לפני תחילת ההתנסות הקלינית</b>.<br>
+   • ⚠️ <i>לומד שאישור חיסונים תקין לא יימצא בתיקו האישי הממוחשב לא יורשה להתחיל את ההתנסות!</i><br><br>
+2. <b>אישורי משטרה נדרשים:</b><br>
+   • <b>טופס בולם:</b> אישור היעדר עבירות אלימות כלפי חסרי ישע (חובה לכל הלומדים).<br>
    • <b>אישור היעדר עבירות מין:</b> חובה לגברים בלבד.<br><br>
 3. <b>אישור יציאה להתנסות:</b><br>
-   • הורדת טופס בקשה מפורט מהמודל.<br>
-   • תיאום מול מחלקת האם / שיחה משולשת ואישור מנחה קליני מורשה (ותק של שנתיים לפחות).`
+   • בדיקה במחלקת האם.<br>
+   • שליחת טופס בקשה (הורדה מהמודל) למרכזת הקורס חגית נופר.<br>
+   • קבלת אישור ואישור מנחה לאחר שיחה משולשת.`
             },
-            {
-                keys: ["טופס ג", "טופס ג'", "חיסון", "חיסונים", "ענת קשטן", "בריאות הלומדים", "מנטו", "שחפת"],
-                res: `💉 <b>הנחיות חיסונים וטופס ג':</b><br><br>
-📥 <b>הורדת טפסים:</b> את כל הטפסים וההנחיות <u>מורידים ישירות ממערכת ה-Moodle</u> (אין למלא אותם אונליין).<br>
-• <b>הגשת טופס ג' חתום:</b> עד חודש לפני ההתנסות לכתובת: <u>sheba.gimel@sheba.gov.il</u>.<br>
-• <b>חיסונים נדרשים:</b> HBV, Tdap, MMR, אבעבועות רוח, פוליו ותבחין טוברקולין (מנטו).<br>
-• <b>רכזת בריאות הלומדים:</b> ענת קשטן (anat.kashtan@sheba.health.gov.il).`
+            schedule: {
+                keywords: ["לוח זמנים", "מערכת שעות", "מערכת", "שעות", "מתי לומדים", "שעות לימוד", "סדר יום", "חופש", "חגים", "פגרה", "19/5", "ט באב"],
+                response: `📅 <b>סדר יום שגרתי בימי חמישי:</b><br>
+• 08:00-09:30 – שיעור ראשון<br>
+• 09:30-09:45 – הפסקה<br>
+• 09:45-11:15 – שיעור שני<br>
+• 11:15-11:30 – הפסקה<br>
+• 11:30-13:00 – שיעור שלישי<br>
+• 13:00-13:30 – הפסקה<br>
+• 13:30-15:00 – שיעור רביעי<br><br>
+📌 <b>תאריכים מיוחדים, ימי עיון וימי פגרה (אין לימודים בימי ה'):</b><br>
+• 19/03/26 – עיד אל פיטר<br>
+• 02/04/26 & 09/04/26 – חג הפסח<br>
+• <b>19/05/26 (יום ג')</b> – <b>יום עיון מדריכים קליניים (השתתפות חובה! על חשבון שעות קליניות)</b><br>
+• 21/05/26 – חג שבועות<br>
+• 28/05/26 – עיד אל אדחה<br>
+• <b>20/07/26 (יום ב')</b> – יום לימוד חלופי ל-ט' באב (23/07/26)<br>
+• <b>חודש אוגוסט:</b> פגרת קיץ (אין לימודים פרונטליים בכיתה).`
             },
-            {
-                keys: ["משטרה", "בולם", "חסרי ישע", "עבירות מין", "אישור משטרה"],
-                res: `👮 <b>אישורי משטרה נדרשים להתנסות:</b><br>
-• <b>אישור בולם:</b> היעדר עבירות אלימות כלפי חסרי ישע (חובה לכל הלומדים).<br>
-• <b>אישור היעדר עבירות מין:</b> חובה ללומדים גברים בלבד.<br>
- את הנחיות הנפקת האישורים והטפסים מורידים מהמודל.`
+            zoom: {
+                keywords: ["זום", "zoom", "מקוון", "שיעורי זום", "מרחוק", "מחשב", "בינה מלאכותית", "עדי ניב"],
+                response: `💻 <b>מפגשי Zoom מקוונים מתוכננים במערכת:</b><br><br>
+• <b>12/03/2026:</b> משוב והערכה (רונית בן שחר)<br>
+• <b>11/06/2026:</b> כלי בינה מלאכותית (חגית נופר - להתחבר ממחשב) + תוכניות טיפול (אלה שניידרמן)<br>
+• <b>25/06/2026:</b> חוק ומשפט (עו"ד עדי ניב יגודה) + כלי בינה מלאכותית (חגית נופר, 09:00–12:15)<br>
+• <b>30/07/2026 / 06/08/2026:</b> תוכניות טיפול (אלה שניידרמן) + כלי בינה מלאכותית (חגית נופר)`
             },
-            {
-                keys: ["בינה מלאכותית", "ai", "איי איי", "מחשב"],
-                res: `🤖 <b>שיעור כלי בינה מלאכותית:</b><br>
-מרצה: <b>חגית נופר</b>. מתקיים ב-Zoom (חובה להתחבר ממחשב נייד/נייח).<br>
-📅 <b>תאריכים:</b> 11/06/2026, 25/06/2026 (09:00–12:15) ו-06/08/2026.`
+            exams: {
+                keywords: ["מבחן", "מבחנים", "בחינה", "בחינות", "ממשלתי", "ציון", "ציונים", "הערכה", "מבחן מסכם", "משקל", "תנאי עובר", "8/10", "17/12"],
+                response: `📝 <b>מבחנים והערכת הקורס:</b><br><br>
+1. <b>מבחן מסכם פנימי (מועד א'):</b> יום ה', <u>08/10/2026</u> (משקל: 50% מהציון הסופי בקורס).<br>
+2. <b>מבחן רישוי ממשלתי:</b> יום ה', <u>17/12/2026</u> (מבחן בכתב בן 100 שאלות אמריקאיות).<br><br>
+📊 <b>הרכב הציון המסכם בקורס:</b><br>
+• <b>50%</b> – מבחן ידע פנימי מסכם<br>
+• <b>40%</b> – התנסות קלינית (ציון עובר: 70)<br>
+• <b>10%</b> – מטלות הקורס<br><br>
+⚠️ עמידה בהצלחה במבחן הפנימי ובמטלות היא תנאי סף מחייב להגשה לבחינה הממשלתית!`
             },
-            {
-                keys: ["אלה קורן", "פער הדורות", "פערי הדורות", "כבוד ויושרה", "דילמות"],
-                res: `👩‍🏫 <b>מפגשים עם ד"ר אלה קורן:</b><br>
-• <b>פער הדורות:</b> 29/01/2026<br>
-• <b>כבוד ויושרה:</b> 19/02/2026<br>
-• <b>קונפליקטים מוסריים:</b> 02/07/2026 ו-09/07/2026.`
+            tasks: {
+                keywords: ["מטלה", "מטלות", "עבודה", "קונפליקט", "כלי הדרכתי", "כלי לימודי", "רפלקציה", "הגשה", "apa", "kahoot", "mentimeter", "15/10"],
+                response: `📚 <b>מטלות הקורס:</b><br><br>
+1. <b>מטלה 1: ניתוח קונפליקט בתהליכי הדרכה (בכתב):</b><br>
+• ניתוח דילמה ערכית/אתית בהדרכה הקלינית.<br>
+• קובץ Word, פונט Arial 12, רווח 1.5, עד 500 מילים, כללי כתיבה אקדמית APA7.<br>
+• 📅 <b>מועד הגשה:</b> עד <u>15/10/2026</u> במייל לחגית נופר.<br><br>
+2. <b>מטלה 2: הצגת כלי הדרכתי / פעילות למידה:</b><br>
+• הצגת כלי מקורי בסופרוויז'ן (10 דק' הצגה + 5 דק' משוב עמיתים).<br>
+• 🚫 <b>דגש חשוב:</b> אין להשתמש בכלים טכנולוגיים כמו Kahoot או Mentimeter!<br><br>
+3. <b>מטלה 3: מצגת רפלקציה על ההתנסות הקלינית:</b><br>
+• מצגת הכוללת: 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות מייצגות מהלמידה.<br><br>
+*(שימו לב: מטלה 4 בקהילת הידע בוטלה).*`
             },
-            {
-                keys: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט"],
-                res: `⚖️ <b>שיעור חוק ומשפט:</b><br>
-מועבר ע"י <b>עו"ד עדי ניב יגודה</b> ב-Zoom ביום ה', <b>25/06/2026</b>.`
-            },
-            {
-                keys: ["יום עיון", "19/5", "19/05"],
-                res: `🌟 <b>יום עיון מדריכים קליניים:</b><br>
-יום ג', <b>19/05/2026</b>. ⚠️ <b>השתתפות חובה!</b> (נחשב על חשבון שעות ההתנסות הקלינית).`
-            },
-            {
-                keys: ["קונפליקט", "קונפליקטים", "איילת פדה"],
-                res: `1. <b>שיעור קונפליקטים (איילת פדה):</b> יום ה', <b>16/04/2026</b>.<br>
-2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> הגשה עד <b>15/10/2026</b> במייל לחגית נופר.`
-            },
-            {
-                keys: ["זום", "zoom", "מקוון", "שיעורי זום"],
-                res: `💻 <b>מפגשי Zoom מתוכננים:</b><br>
-• <b>12/03/26:</b> משוב והערכה (רונית בן שחר)<br>
-• <b>11/06/26 & 06/08/26:</b> תוכניות טיפול (אלה שניידרמן)<br>
-• <b>11/06/26, 25/06/26 & 06/08/26:</b> כלי בינה מלאכותית (חגית נופר - להתחבר ממחשב)<br>
-• <b>25/06/26:</b> חוק ומשפט (עו"ד עדי ניב יגודה)`
-            },
-            {
-                keys: ["מבחן", "מבחנים", "בחינה", "בחינות", "מסכם", "פנימי", "ממשלתי", "ציון", "ציונים", "משקל", "8/10", "17/12"],
-                res: `📝 <b>מבחנים והערכת הקורס:</b><br><br>
-• <b>מבחן מסכם פנימי (מועד א'):</b> יום ה', <b>08/10/2026</b> (מהווה <b>50%</b> מהציון הסופי בקורס).<br>
-• <b>מבחן רישוי ממשלתי:</b> יום ה', <b>17/12/2026</b> (100 שאלות בכתב).<br><br>
-📊 <b>הרכב הציון:</b> 50% מבחן פנימי + 40% התנסות קלינית (עובר: 70) + 10% מטלות הקורס.`
-            },
-            {
-                keys: ["מטלה", "מטלות", "עבודה", "הנחיות למטלות", "apa", "kahoot", "mentimeter", "15/10"],
-                res: `📚 <b>מטלות הקורס:</b><br><br>
-1. <b>מטלה 1 - ניתוח קונפליקט בכתב:</b> Word, Arial 12, רווח 1.5, עד 500 מילים, APA7. הגשה עד <b>15/10/2026</b> במייל לחגית נופר.<br><br>
-2. <b>מטלה 2 - הצגת כלי הדרכתי:</b> 10 דק' הצגה בסופרוויז'ן. ⛔ <b>איסור:</b> אין להשתמש ב-Kahoot/Mentimeter!<br><br>
-3. <b>מטלה 3 - מצגת רפלקציה:</b> 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות.<br>
-*(מטלה 4 בוטלה).*`
-            },
-            {
-                keys: ["התנסות", "התנסות קלינית", "סופרוויז'ן", "סופרויזן", "100 שעות", "124 שעות", "צפייה"],
-                res: `🏥 <b>התנסות קלינית וסופרוויז'ן (124 שעות):</b><br><br>
-• <b>100 שעות:</b> יישום תוכנית הדרכה בשדה הקליני (מחלקת אם / מורת ביה"ס) החל מחודש מאי.<br>
+            clinical: {
+                keywords: ["התנסות", "התנסות קלינית", "סופרוויז'ן", "סופרויזן", "124 שעות", "100 שעות", "מנחה", "צפייה", "מחלקת אם", "שדה קליני"],
+                response: `🏥 <b>התנסות קלינית וסופרוויז'ן (124 שעות סה"כ):</b><br><br>
+• <b>100 שעות:</b> יישום תוכנית הדרכה בשדה הקליני בפיקוח מנחה קליני (החל מחודש מאי).<br>
 • <b>24 שעות (3 ימים):</b> מפגשי סופרוויז'ן בקבוצות קטנות וסימולציות.<br>
-• <b>הערכת ההתנסות:</b> ציון עובר הוא <b>70</b>. תחומיי "התנהגות מקצועית" ו"בטיחות" הם תנאי הכרחי לעובר!`
+• <b>מיקום ההתנסות:</b> במחלקת האם בליווי מדריך קליני מורשה (ותק של שנתיים לפחות בהדרכה), או בתיאום מול מורת בית הספר.<br>
+• <b>הערכת ההתנסות:</b> ציון עובר הוא <b>70</b>. תחומיי "התנהגות מקצועית" ו"בטיחות" הם תנאי הכרחי לעובר בהתנסות!`
             },
-            {
-                keys: ["מערכת שעות", "לוח זמנים", "סדר יום", "חופש", "חגים", "פגרה", "מתי לומדים"],
-                res: `📅 <b>מערכת שעות ולוח זמנים:</b><br><br>
-• <b>שעות הלימוד:</b> ימי ה' בשעות 08:00–15:00.<br>
-• <b>פגרות:</b> 19/03 (עיד אל פיטר), 02/04 & 09/04 (פסח), 21/05 (שבועות), 28/05 (עיד אל אדחה), אוגוסט.<br>
-• <b>ימים מיוחדים:</b> 19/05/26 (יום ג' - יום עיון חובה), 20/07/26 (יום ב' - לימוד חלופי ל-ט' באב).`
+            vaccines: {
+                keywords: ["חיסון", "חיסונים", "אישור", "אישורים", "ענת קשטן", "טופס ג", "טפסים", "טופס", "משטרה", "בטיחות", "בריאות הלומדים", "מנטו", "שחפת"],
+                response: `💉 <b>הנחיות חיסונים וטפסים להתנסות הקלינית:</b><br><br>
+📥 <b>הורדת טפסים:</b> את כל הטפסים וההנחיות <u>מורידים ממערכת ה-Moodle</u> (אין למלא אותם אונליין במודל).<br><br>
+1. <b>אישור חיסונים (טופס ג'):</b> להוריד מהמודל, להחתים במרפאה תעסוקתית/לשכת בריאות ולהעביר לדוא"ל: <u>sheba.gimel@sheba.gov.il</u> עד חודש לפני תחילת ההתנסות.<br>
+2. <b>אישורי משטרה:</b><br>
+• אישור בולם - היעדר עבירות אלימות כלפי חסרי ישע (לכולם).<br>
+• אישור היעדר עבירות מין (לגברים בלבד).<br>
+3. <b>אישור יציאה להתנסות:</b> שליחת טופס בקשה (הורדה מהמודל) למרכזת הקורס + שיחה משולשת.<br><br>
+📞 <b>רכזת בריאות הלומדים:</b> ענת קשטן (anat.kashtan@sheba.health.gov.il).`
             },
-            {
-                keys: ["מודל", "moodle", "סיסמה", "שם משתמש", "אתר", "הורדת טפסים"],
-                res: `💻 <b>מערכת Moodle (הקמפוס הדיגיטלי):</b><br><br>
-• <b>כתובת:</b> <a href="http://www.sns.sheba.co.il" target="_blank" class="text-blue-700 underline font-bold">www.sns.sheba.co.il</a><br>
-• <b>שם משתמש:</b> מספר ת.ז. (ללא ספרת ביקורת).<br>
-• <b>סיסמה:</b> תאריך לידה ב-6 ספרות (לדוגמה 010198).<br>
-• 📄 את כל הטפסים וההנחיות <u>מורידים ישירות מהמודל</u>.`
-            },
-            {
-                keys: ["אנשי קשר", "צוות", "מייל", "טלפון", "חגית", "נינה", "נעמה", "מיכל"],
-                res: `📞 <b>צוות הקורס ואנשי קשר:</b><br><br>
+            contacts: {
+                keywords: ["איש קשר", "אנשי קשר", "צוות", "טלפון", "מייל", "דואל", "חגית", "נינה", "נעמה", "מיכל", "ענת"],
+                response: `📞 <b>צוות הקורס ואנשי קשר:</b><br><br>
 • <b>מרכזת הקורס:</b> חגית נופר | 052-6666932 | hagit.nuphar@sheba.health.gov.il<br>
 • <b>בריאות הלומדים (חיסונים):</b> ענת קשטן | anat.kashtan@sheba.health.gov.il<br>
 • <b>תמיכה טכנית ו-Moodle:</b> נינה ארוטיוניאן | Nina.Arutiunian@sheba.health.gov.il<br>
-• <b>ספריה:</b> נעמה בריימן | Naama.Breiman@sheba.health.gov.il<br>
-• <b>שכר לימוד:</b> מיכל פלג | Michal.Peleg@Sheba.health.org.il`
+• <b>ספריה והדרכת מאגרים:</b> נעמה בריימן | Naama.Breiman@sheba.health.gov.il<br>
+• <b>שכר לימוד ומזכירות:</b> מיכל פלג | Michal.Peleg@Sheba.health.org.il`
+            },
+            moodle: {
+                keywords: ["מודל", "moodle", "סיסמה", "שם משתמש", "תמיכה", "אתר", "קישור", "טפסים במודל"],
+                response: `💻 <b>גישה למערכת Moodle (הקמפוס הדיגיטלי):</b><br><br>
+• <b>כתובת המערכת:</b> <a href="http://www.sns.sheba.co.il" target="_blank" class="text-blue-700 underline font-bold">www.sns.sheba.co.il</a><br>
+• <b>שם משתמש:</b> מספר תעודת זהות (ללא ספרת ביקורת).<br>
+• <b>סיסמה ראשונית:</b> תאריך לידה ב-6 ספרות (לדוגמה: 010198).<br>
+• 📄 <b>טפסים:</b> את כל הטפסים והנחיות החיסונים מורידים ישירות מהמודל.<br>
+• <b>תמיכה טכנית:</b> נינה ארוטיוניאן (Nina.Arutiunian@sheba.health.gov.il).`
             }
-        ];
+        };
 
-        // Functions
+        // UI Functions
         function sendMessage() {
             const input = document.getElementById('userInput');
             const text = input.value.trim();
@@ -212,7 +230,7 @@
             setTimeout(() => {
                 const response = getBotResponse(text);
                 addMessage(response, 'bot');
-            }, 300);
+            }, 400);
         }
 
         function sendQuickReply(text) {
@@ -220,7 +238,7 @@
             setTimeout(() => {
                 const response = getBotResponse(text);
                 addMessage(response, 'bot');
-            }, 300);
+            }, 400);
         }
 
         function handleKeyPress(e) {
@@ -236,16 +254,20 @@
             if (sender === 'user') {
                 msgDiv.className = 'flex items-start justify-end space-x-3 space-x-reverse';
                 msgDiv.innerHTML = `
-                    <div class="bg-blue-800 text-white p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] sm:max-w-[75%] text-sm leading-relaxed">
+                    <div class="bg-blue-800 text-white p-3.5 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] sm:max-w-[75%] text-sm sm:text-base leading-relaxed">
                         ${escapeHTML(text)}
                     </div>
-                    <div class="w-8 h-8 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0 mt-1 shadow">👤</div>
+                    <div class="w-9 h-9 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                        👤
+                    </div>
                 `;
             } else {
                 msgDiv.className = 'flex items-start space-x-3 space-x-reverse';
                 msgDiv.innerHTML = `
-                    <div class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-1 shadow">🤖</div>
-                    <div class="bg-white border border-slate-200 p-3.5 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm leading-relaxed">
+                    <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                        🤖
+                    </div>
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
                         ${text}
                     </div>
                 `;
@@ -256,25 +278,15 @@
         }
 
         function getBotResponse(input) {
-            const clean = input.toLowerCase();
-            let bestMatch = null;
-            let maxScore = 0;
-
-            for (let item of kb) {
-                let score = 0;
-                for (let key of item.keys) {
-                    if (clean.includes(key.toLowerCase())) {
-                        score += key.length; 
+            const cleanInput = input.toLowerCase();
+            
+            for (let category in botKnowledge) {
+                const keywords = botKnowledge[category].keywords;
+                for (let word of keywords) {
+                    if (cleanInput.includes(word)) {
+                        return botKnowledge[category].response;
                     }
                 }
-                if (score > maxScore) {
-                    maxScore = score;
-                    bestMatch = item.res;
-                }
-            }
-
-            if (bestMatch && maxScore > 0) {
-                return bestMatch;
             }
 
             return `מצטערת, לא מצאתי תשובה מדויקת לשאלה זו במאגר המידע. 😅<br><br>
@@ -284,9 +296,15 @@
         }
 
         function escapeHTML(str) {
-            return str.replace(/[&<>'"]/g, tag => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
-            }[tag] || tag));
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
         }
     </script>
 </body>
