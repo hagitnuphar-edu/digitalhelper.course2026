@@ -46,7 +46,7 @@
                         <span>דיגי</span>
                         <span class="text-xs sm:text-sm font-normal bg-blue-500/30 text-blue-100 px-2 py-0.5 rounded-full border border-blue-300/30">העוזרת הדיגיטלית</span>
                     </h1>
-                    <p class="text-xs sm:text-sm text-blue-100/90">קורס הדרכה קלינית 2026 | בית הספר האקדמי לאחיות ע"ש זיוה טל</p>
+                    <p class="text-xs sm:text-sm text-blue-100/90">קורס הדרכה קלינית 2026 | ביה"ס לאחיות ע"ש זיוה טל</p>
                 </div>
             </div>
             <div class="hidden sm:block text-left text-xs text-blue-200/80">
@@ -57,7 +57,7 @@
         <!-- Quick Action Buttons -->
         <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
             <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים נפוצים:</span>
-            <button onclick="sendQuickReply('כל מערכת השעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות מלאה</button>
+            <button onclick="sendQuickReply('מערכת שעות מלאה')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
             <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
             <button onclick="sendQuickReply('תאריכי מבחנים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
             <button onclick="sendQuickReply('מטלות הקורס')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
@@ -83,7 +83,7 @@
 
         <!-- Input Area -->
         <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2 space-x-reverse">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="שאלו אותי שאלה (למשל: מתי השיעור של אלה קורן?)..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="שאלו אותי שאלה (למשל: מתי השיעור על בינה מלאכותית?)..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
             <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
                 <span>שלח</span>
                 <i class="fa-solid fa-paper-plane text-xs mr-1"></i>
@@ -97,91 +97,71 @@
     </div>
 
     <script>
-        // Focused & Granular Knowledge Base Mapping
-        const specificKnowledge = [
+        // Focused Knowledge Items Array
+        const knowledgeItems = [
             // --- Specific Subjects & Lecturers ---
             {
                 keywords: ["בינה מלאכותית", "ai", "איי איי", "מחשב"],
                 response: `🤖 <b>שיעור כלי בינה מלאכותית (למידה ותרגול):</b><br>
-מועבר על ידי <b>חגית נופר</b> במתכונת Zoom (יש להתחבר ממחשב).<br>
-תאריכים במערכת השעות:<br>
+מועבר על ידי <b>חגית נופר</b> ב-Zoom (יש להתחבר ממחשב).<br>
+תאריכים במערכת:<br>
 • יום ה', <b>11/06/2026</b><br>
-• יום ה', <b>25/06/2026</b> (בשעות 09:00–12:15)<br>
+• יום ה', <b>25/06/2026</b> (09:00–12:15)<br>
 • יום ה', <b>06/08/2026</b>`
             },
             {
                 keywords: ["אלה קורן", "פער הדורות", "פערי הדורות", "כבוד ויושרה"],
-                response: `👩‍🏫 <b>מפגשים עם ד"ר אלה קורן:</b><br>
-• <b>פער הדורות:</b> 29/01/2026 (פתיחת הקורס).<br>
+                response: `👩‍🏫 <b>שיעורים עם ד"ר אלה קורן:</b><br>
+• <b>פער הדורות:</b> 29/01/2026 (פתיחה).<br>
 • <b>כבוד ויושרה:</b> יום ה', 19/02/2026.<br>
 • <b>דילמות וקונפליקטים מוסריים:</b> יום ה', 02/07/2026 ו-09/07/2026.`
             },
             {
-                keywords: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט", "נהלים"],
-                response: `⚖️ <b>שיעור חוק ומשפט (פיתוח עשייה בהתאם לנהלים וחוקים):</b><br>
+                keywords: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט"],
+                response: `⚖️ <b>שיעור חוק ומשפט (פיתוח עשייה לפי חוקים ונהלים):</b><br>
 מועבר ע"י <b>עו"ד עדי ניב יגודה</b> ב-Zoom ביום ה', <b>25/06/2026</b>.`
             },
             {
                 keywords: ["יום עיון", "19/5", "19/05"],
                 response: `🌟 <b>יום עיון מדריכים קליניים:</b><br>
 מתקיים ביום ג', <b>19/05/2026</b>.<br>
-⚠️ <b>השתתפות חובה!</b> (נחשב על חשבון שעות ההתנסות הקלינית).`
+⚠️ <b>השתתפות חובה!</b> (על חשבון שעות ההתנסות הקלינית).`
             },
             {
                 keywords: ["קונפליקט", "קונפליקטים", "איילת פדה"],
                 response: `קונפליקטים נלמדים בשני הקשרים בקורס:<br>
 1. <b>שיעור "קונפליקטים והתנגדויות" (איילת פדה):</b> יום ה', <b>16/04/2026</b>.<br>
-2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> מוגשת עד <b>15/10/2026</b> במייל לחגית נופר.`
+2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> הגשה עד <b>15/10/2026</b> במייל לחגית נופר.`
             },
             {
                 keywords: ["תכנית טיפול", "תוכניות טיפול", "אלה שניידרמן"],
                 response: `📋 <b>תוכניות טיפול ככלי למידה והערכה (אלה שניידרמן):</b><br>
-מפגשי Zoom מתוכננים לתאריכים: <b>11/06/2026</b> ו-<b>06/08/2026</b>.`
+מפגשי Zoom בתאריכים: <b>11/06/2026</b> ו-<b>06/08/2026</b>.`
             },
             {
                 keywords: ["איכות ובטיחות", "דניאל בן שושן"],
                 response: `🛡️ <b>שיעור איכות ובטיחות (דניאל בן שושן):</b><br>
-מתוך הפרק "תיווך ערכי ליבת המקצוע", מתקיים ביום ה', <b>11/06/2026</b>.`
+מתקיים ביום ה', <b>11/06/2026</b>.`
             },
             {
                 keywords: ["זום", "zoom", "מקוון", "מרחוק"],
-                response: `💻 <b>מפגשי Zoom המתוכננים במערכת:</b><br>
+                response: `💻 <b>מפגשי Zoom במערכת:</b><br>
 • 12/03/26 – משוב והערכה (רונית בן שחר)<br>
 • 11/06/26 & 06/08/26 – תוכניות טיפול (אלה שניידרמן)<br>
 • 11/06/26, 25/06/26 & 06/08/26 – כלי בינה מלאכותית (חגית נופר)<br>
 • 25/06/26 – חוק ומשפט (עו"ד עדי ניב יגודה)`
             },
             {
-                keywords: ["סופרוויז'ן", "סופרויזן", "קבוצות סופרוויז'ן", "מפגש סופרוויז'ן"],
+                keywords: ["סופרוויז'ן", "סופרויזן", "קבוצות סופרוויז'ן"],
                 response: `👥 <b>מפגשי סופרוויז'ן (24 שעות סה"כ):</b><br>
-• <b>יום סופרויז'ן 1 (בקבוצות קטנות):</b> תאריכים לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>
-• <b>ימי סופרויז'ן 2 ו-3 (תחנות לכל הקורס):</b> 15/10/2026 ו-22/10/2026.`
+• <b>מפגש 1 (בקבוצות קטנות):</b> לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>
+• <b>מפגשים 2 ו-3 (תחנות לכל הקורס):</b> 15/10/2026 ו-22/10/2026.`
             },
             {
                 keywords: ["מבחן מסכם", "מועד א", "פנימי", "8/10", "8/10/26"],
                 response: `📝 <b>מבחן ידע מסכם פנימי:</b><br>
 • <b>תאריך:</b> יום ה', <b>08/10/2026</b>.<br>
-• <b>משקל בציון:</b> 50% מהציון הסופי בקורס.<br>
-• עמידה במבחן זה היא תנאי להגשה לבחינה הממשלתית!`
+• <b>משקל:</b> 50% מהציון הסופי בקורס.`
             },
             {
                 keywords: ["ממשלתי", "בחינה ממשלתית", "מבחן ממשלתי", "17/12"],
-                response: `🏛️ <b>מבחן רישוי ממשלתי:</b><br>
-• <b>תאריך:</b> יום ה', <b>17/12/2026</b>.<br>
-• מבחן אמריקאי בכתב בן 100 שאלות.`
-            },
-            {
-                keywords: ["מטלה 1", "קונפליקט בכתב", "15/10"],
-                response: `📄 <b>מטלה 1 - ניתוח קונפליקט בכתב:</b><br>
-• ניתוח דילמה אתית/ערכית בהדרכה.<br>
-• פורמט Word, פונט Arial 12, רווח 1.5, עד 500 מילים, כללי APA7.<br>
-• 📅 <b>מועד הגשה:</b> עד <b>15/10/2026</b> בדוא"ל לחגית נופר.`
-            },
-            {
-                keywords: ["מטלה 2", "כלי הדרכתי", "כלי לימודי", "kahoot", "mentimeter"],
-                response: `🎨 <b>מטלה 2 - הצגת כלי הדרכתי:</b><br>
-• הצגת פעילות למידה/כלי מקורי בסופרוויז'ן (10 דק' הצגה + 5 דק' משוב).<br>
-• ⛔ <b>חשוב מאוד:</b> אין להשתמש בכלים טכנולוגיים כגון Kahoot או Mentimeter!`
-            },
-            {
-                keywords: ["מטלה 3", "מצגת רפלקציה", "רפלקציה"],
