@@ -11,23 +11,11 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Assistant', sans-serif;
-            background-color: #f0f4f8;
-        }
-        .chat-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .chat-scroll::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .chat-scroll::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .chat-scroll::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        body { font-family: 'Assistant', sans-serif; background-color: #f0f4f8; }
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .chat-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="h-screen flex flex-col justify-between items-center p-2 sm:p-4">
@@ -57,10 +45,10 @@
         <!-- Quick Action Buttons -->
         <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
             <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים נפוצים:</span>
-            <button onclick="sendQuickReply('מערכת שעות מלאה')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
+            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
             <button onclick="sendQuickReply('שיעורי זום')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💻 מפגשי Zoom</button>
-            <button onclick="sendQuickReply('תאריכי מבחנים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
-            <button onclick="sendQuickReply('מטלות הקורס')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('מבחנים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('מטלות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
             <button onclick="sendQuickReply('חיסונים וטפסים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
             <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
             <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
@@ -70,13 +58,11 @@
         <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4 chat-scroll bg-slate-50/50">
             <!-- Welcome Message -->
             <div class="flex items-start space-x-3 space-x-reverse">
-                <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
-                    🤖
-                </div>
+                <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">🤖</div>
                 <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
                     <p class="font-bold text-blue-900 mb-1">שלום וברוכים הבאים! 👋</p>
                     <p>אני <b>דיגי</b> - העוזרת הדיגיטלית של <b>קורס הדרכה קלינית 2026</b>.</p>
-                    <p class="mt-2">תוכלו לשאול אותי שאלות ממוקדות כמו: <i>"מתי השיעור על בינה מלאכותית?"</i>, <i>"עד מתי מגישים את מטלה 1?"</i>, <i>"איזה שיעורים מתקיימים בזום?"</i>, <i>"מה המייל של ענת קשטן?"</i> או ללחוץ על הכפתורים המהירים למעלה.</p>
+                    <p class="mt-2">תוכלו לשאול אותי שאלות ממוקדות (למשל: <i>"מתי השיעור על בינה מלאכותית?"</i>, <i>"עד מתי מגישים את מטלה 1?"</i>, <i>"איזה שיעורים ב-Zoom?"</i>) או ללחוץ על הכפתורים המהירים למעלה.</p>
                 </div>
             </div>
         </div>
@@ -97,71 +83,79 @@
     </div>
 
     <script>
-        // Focused Knowledge Items Array
         const knowledgeItems = [
             // --- Specific Subjects & Lecturers ---
             {
                 keywords: ["בינה מלאכותית", "ai", "איי איי", "מחשב"],
-                response: `🤖 <b>שיעור כלי בינה מלאכותית (למידה ותרגול):</b><br>
-מועבר על ידי <b>חגית נופר</b> ב-Zoom (יש להתחבר ממחשב).<br>
-תאריכים במערכת:<br>
-• יום ה', <b>11/06/2026</b><br>
-• יום ה', <b>25/06/2026</b> (09:00–12:15)<br>
-• יום ה', <b>06/08/2026</b>`
+                response: `🤖 <b>שיעור כלי בינה מלאכותית:</b><br>מועבר ע"י <b>חגית נופר</b> ב-Zoom (מחשב חובה).<br>תאריכים: <b>11/06/2026</b>, <b>25/06/2026</b> (09:00–12:15) ו-<b>06/08/2026</b>.`
             },
             {
-                keywords: ["אלה קורן", "פער הדורות", "פערי הדורות", "כבוד ויושרה"],
-                response: `👩‍🏫 <b>שיעורים עם ד"ר אלה קורן:</b><br>
-• <b>פער הדורות:</b> 29/01/2026 (פתיחה).<br>
-• <b>כבוד ויושרה:</b> יום ה', 19/02/2026.<br>
-• <b>דילמות וקונפליקטים מוסריים:</b> יום ה', 02/07/2026 ו-09/07/2026.`
+                keywords: ["אלה קורן", "פער הדורות", "כבוד ויושרה"],
+                response: `👩‍🏫 <b>מפגשים עם ד"ר אלה קורן:</b><br>• <b>פער הדורות:</b> 29/01/2026<br>• <b>כבוד ויושרה:</b> 19/02/2026<br>• <b>קונפליקטים מוסריים:</b> 02/07/2026 ו-09/07/2026.`
             },
             {
                 keywords: ["חוק ומשפט", "עדי ניב", "יגודה", "משפט"],
-                response: `⚖️ <b>שיעור חוק ומשפט (פיתוח עשייה לפי חוקים ונהלים):</b><br>
-מועבר ע"י <b>עו"ד עדי ניב יגודה</b> ב-Zoom ביום ה', <b>25/06/2026</b>.`
+                response: `⚖️ <b>שיעור חוק ומשפט:</b> מועבר ע"י <b>עו"ד עדי ניב יגודה</b> ב-Zoom ביום ה', <b>25/06/2026</b>.`
             },
             {
                 keywords: ["יום עיון", "19/5", "19/05"],
-                response: `🌟 <b>יום עיון מדריכים קליניים:</b><br>
-מתקיים ביום ג', <b>19/05/2026</b>.<br>
-⚠️ <b>השתתפות חובה!</b> (על חשבון שעות ההתנסות הקלינית).`
+                response: `🌟 <b>יום עיון מדריכים קליניים:</b> יום ג', <b>19/05/2026</b>. ⚠️ <b>נוכחות חובה!</b> (על חשבון שעות קליניות).`
             },
             {
                 keywords: ["קונפליקט", "קונפליקטים", "איילת פדה"],
-                response: `קונפליקטים נלמדים בשני הקשרים בקורס:<br>
-1. <b>שיעור "קונפליקטים והתנגדויות" (איילת פדה):</b> יום ה', <b>16/04/2026</b>.<br>
-2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> הגשה עד <b>15/10/2026</b> במייל לחגית נופר.`
+                response: `1. <b>שיעור קונפליקטים (איילת פדה):</b> יום ה', <b>16/04/2026</b>.<br>2. <b>מטלה 1 (ניתוח קונפליקט בכתב):</b> הגשה עד <b>15/10/2026</b> במייל לחגית נופר.`
             },
             {
                 keywords: ["תכנית טיפול", "תוכניות טיפול", "אלה שניידרמן"],
-                response: `📋 <b>תוכניות טיפול ככלי למידה והערכה (אלה שניידרמן):</b><br>
-מפגשי Zoom בתאריכים: <b>11/06/2026</b> ו-<b>06/08/2026</b>.`
+                response: `📋 <b>תוכניות טיפול ככלי למידה (אלה שניידרמן):</b> מפגשי Zoom ב-<b>11/06/2026</b> ו-<b>06/08/2026</b>.`
             },
             {
                 keywords: ["איכות ובטיחות", "דניאל בן שושן"],
-                response: `🛡️ <b>שיעור איכות ובטיחות (דניאל בן שושן):</b><br>
-מתקיים ביום ה', <b>11/06/2026</b>.`
+                response: `🛡️ <b>שיעור איכות ובטיחות (דניאל בן שושן):</b> יום ה', <b>11/06/2026</b>.`
             },
             {
                 keywords: ["זום", "zoom", "מקוון", "מרחוק"],
-                response: `💻 <b>מפגשי Zoom במערכת:</b><br>
-• 12/03/26 – משוב והערכה (רונית בן שחר)<br>
-• 11/06/26 & 06/08/26 – תוכניות טיפול (אלה שניידרמן)<br>
-• 11/06/26, 25/06/26 & 06/08/26 – כלי בינה מלאכותית (חגית נופר)<br>
-• 25/06/26 – חוק ומשפט (עו"ד עדי ניב יגודה)`
+                response: `💻 <b>מפגשי Zoom בקורס:</b><br>• 12/03/26 (רונית בן שחר)<br>• 11/06/26 & 06/08/26 (אלה שניידרמן)<br>• 11/06/26, 25/06/26 & 06/08/26 (חגית נופר)<br>• 25/06/26 (עו"ד עדי ניב יגודה)`
             },
             {
                 keywords: ["סופרוויז'ן", "סופרויזן", "קבוצות סופרוויז'ן"],
-                response: `👥 <b>מפגשי סופרוויז'ן (24 שעות סה"כ):</b><br>
-• <b>מפגש 1 (בקבוצות קטנות):</b> לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>
-• <b>מפגשים 2 ו-3 (תחנות לכל הקורס):</b> 15/10/2026 ו-22/10/2026.`
+                response: `👥 <b>מפגשי סופרוויז'ן (24 שעות):</b><br>• <b>מפגש 1:</b> לבחירה בספטמבר (10/09, 17/09, 21/09, 24/09).<br>• <b>מפגשים 2 ו-3 (תחנות):</b> 15/10/2026 ו-22/10/2026.`
             },
             {
-                keywords: ["מבחן מסכם", "מועד א", "פנימי", "8/10", "8/10/26"],
-                response: `📝 <b>מבחן ידע מסכם פנימי:</b><br>
-• <b>תאריך:</b> יום ה', <b>08/10/2026</b>.<br>
-• <b>משקל:</b> 50% מהציון הסופי בקורס.`
+                keywords: ["מבחן מסכם", "מועד א", "פנימי", "8/10"],
+                response: `📝 <b>מבחן מסכם פנימי:</b> יום ה', <b>08/10/2026</b> (מהווה 50% מהציון הסופי).`
             },
             {
                 keywords: ["ממשלתי", "בחינה ממשלתית", "מבחן ממשלתי", "17/12"],
+                response: `🏛️ <b>מבחן רישוי ממשלתי:</b> יום ה', <b>17/12/2026</b> (100 שאלות אמריקאיות).`
+            },
+            {
+                keywords: ["מטלה 1", "קונפליקט בכתב", "15/10"],
+                response: `📄 <b>מטלה 1 - ניתוח קונפליקט בכתב:</b> עד 500 מילים, APA7. מועד הגשה: <b>15/10/2026</b> בדוא"ל לחגית נופר.`
+            },
+            {
+                keywords: ["מטלה 2", "כלי הדרכתי", "כלי לימודי", "kahoot", "mentimeter"],
+                response: `🎨 <b>מטלה 2 - הצגת כלי הדרכתי:</b> 10 דק' הצגה בסופרוויז'ן. ⛔ <b>חדיו איסור:</b> אין להשתמש ב-Kahoot/Mentimeter!`
+            },
+            {
+                keywords: ["מטלה 3", "מצגת רפלקציה", "רפלקציה"],
+                response: `🖼️ <b>מטלה 3 - מצגת רפלקציה:</b> 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות מייצגות.`
+            },
+            {
+                keywords: ["חיסונים", "חיסון", "ענת קשטן", "טופס ג", "טפסים", "טופס"],
+                response: `💉 <b>חיסונים וטפסים:</b><br>📥 את כל הטפסים <b>מורידים ממערכת ה-Moodle</b> (לא ממלאים אונליין).<br>• טופס ג' חתום לשלוח ל: <u>sheba.gimel@sheba.gov.il</u>.<br>• רכזת בריאות הלומדים: ענת קשטן (anat.kashtan@sheba.health.gov.il).`
+            },
+            {
+                keywords: ["אישור משטרה", "משטרה", "עבירות מין", "חסרי ישע"],
+                response: `👮 <b>אישורי משטרה:</b><br>• אישור היעדר עבירות אלימות כלפי חסרי ישע (כולם).<br>• אישור היעדר עבירות מין (גברים בלבד).`
+            },
+            {
+                keywords: ["אנשי קשר", "צוות", "מייל", "טלפון", "חגית", "נינה", "נעמה", "מיכל"],
+                response: `📞 <b>צוות הקורס:</b><br>• <b>מרכזת:</b> חגית נופר (052-6666932 | hagit.nuphar@sheba.health.gov.il)<br>• <b>חיסונים:</b> ענת קשטן (anat.kashtan@sheba.health.gov.il)<br>• <b>תמיכה/Moodle:</b> נינה ארוטיוניאן (Nina.Arutiunian@sheba.health.gov.il)<br>• <b>ספריה:</b> נעמה בריימן (Naama.Breiman@sheba.health.gov.il)<br>• <b>שכר לימוד:</b> מיכל פלג (Michal.Peleg@Sheba.health.org.il)`
+            },
+            {
+                keywords: ["התנסות", "התנסות קלינית", "100 שעות", "124 שעות"],
+                response: `🏥 <b>התנסות קלינית (124 שעות):</b><br>• 100 שעות הדרכה בשדה הקליני (ממאי).<br>• 24 שעות סופרוויז'ן וסימולציות.<br>• ציון עובר: <b>70</b>.`
+            },
+            {
+                keywords: ["ציון", "ציונים", "אחוזים", "משקל"],
