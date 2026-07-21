@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>עוזר דיגיטלי - קורס הדרכה קלינית 2026</title>
+    <title>דיגי - העוזרת הדיגיטלית | קורס הדרכה קלינית 2026</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font Assistant -->
@@ -13,13 +13,13 @@
     <style>
         body {
             font-family: 'Assistant', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #f0f4f8;
         }
         .chat-scroll::-webkit-scrollbar {
             width: 6px;
         }
         .chat-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #f1f5f9;
         }
         .chat-scroll::-webkit-scrollbar-thumb {
             background: #cbd5e1;
@@ -33,63 +33,66 @@
 <body class="h-screen flex flex-col justify-between items-center p-2 sm:p-4">
 
     <!-- Main Container -->
-    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl flex flex-col h-[95vh] overflow-hidden border border-gray-200">
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg flex flex-col h-[95vh] overflow-hidden border border-slate-200">
         
         <!-- Header -->
-        <header class="bg-gradient-to-r from-teal-700 via-teal-800 to-cyan-800 text-white p-4 flex items-center justify-between shadow-md">
+        <header class="bg-gradient-to-r from-slate-800 via-indigo-900 to-blue-900 text-white p-4 flex items-center justify-between shadow-md">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white text-2xl font-bold shadow-inner">
-                    <i class="fa-solid fa-user-nurse"></i>
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-300/30 flex items-center justify-center text-white text-2xl font-bold shadow-inner">
+                    <i class="fa-solid fa-robot text-blue-200"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl sm:text-2xl font-bold leading-tight">עוזר דיגיטלי - הדרכה קלינית 2026</h1>
-                    <p class="text-xs sm:text-sm text-teal-100">בית הספר האקדמי לאחיות ע"ש זיוה טל | שיבא תל השומר</p>
+                    <h1 class="text-xl sm:text-2xl font-bold leading-tight flex items-center gap-2">
+                        <span>דיגי</span>
+                        <span class="text-xs sm:text-sm font-normal bg-blue-500/30 text-blue-100 px-2 py-0.5 rounded-full border border-blue-300/30">העוזרת הדיגיטלית</span>
+                    </h1>
+                    <p class="text-xs sm:text-sm text-blue-100/90">קורס הדרכה קלינית 2026 | בית הספר האקדמי לאחיות ע"ש זיוה טל</p>
                 </div>
             </div>
-            <div class="hidden sm:block text-left text-xs text-teal-200">
+            <div class="hidden sm:block text-left text-xs text-blue-200/80">
                 <span>מרכזת הקורס: חגית נופר</span>
             </div>
         </header>
 
         <!-- Quick Action Buttons -->
-        <div class="bg-teal-50 p-2.5 border-b border-teal-100 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
-            <span class="text-teal-900 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-bolt text-amber-500 ml-1"></i>נושאים נפוצים:</span>
-            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
-            <button onclick="sendQuickReply('מבחנים וציונים')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
-            <button onclick="sendQuickReply('הנחיות למטלות')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
-            <button onclick="sendQuickReply('חיסונים ואישורים')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">💉 חיסונים ואישורים</button>
-            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
-            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-teal-600 hover:text-white text-teal-800 font-medium px-3 py-1.5 rounded-full border border-teal-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
+        <div class="bg-slate-50 p-2.5 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs sm:text-sm chat-scroll">
+            <span class="text-slate-700 font-semibold whitespace-nowrap pl-1"><i class="fa-solid fa-compass text-blue-600 ml-1"></i>נושאים נפוצים:</span>
+            <button onclick="sendQuickReply('מערכת שעות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📅 מערכת שעות</button>
+            <button onclick="sendQuickReply('מבחנים וציונים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📝 מבחנים וציונים</button>
+            <button onclick="sendQuickReply('הנחיות למטלות')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📚 הנחיות למטלות</button>
+            <button onclick="sendQuickReply('חיסונים ואישורים')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">💉 חיסונים וטפסים</button>
+            <button onclick="sendQuickReply('התנסות קלינית')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">🏥 התנסות קלינית</button>
+            <button onclick="sendQuickReply('אנשי קשר')" class="bg-white hover:bg-blue-600 hover:text-white text-blue-900 font-medium px-3.5 py-1.5 rounded-full border border-blue-200 transition shadow-sm whitespace-nowrap">📞 אנשי קשר</button>
         </div>
 
         <!-- Chat Area -->
-        <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4 chat-scroll bg-slate-50">
+        <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4 chat-scroll bg-slate-50/50">
             <!-- Welcome Message -->
             <div class="flex items-start space-x-3 space-x-reverse">
-                <div class="w-9 h-9 rounded-full bg-teal-700 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
                     🤖
                 </div>
-                <div class="bg-white border border-gray-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-gray-800 text-sm sm:text-base leading-relaxed">
-                    <p class="font-bold text-teal-800 mb-1">שלום וברוכים הבאים! 👋</p>
-                    <p>אני העוזר הדיגיטלי של <b>השתלמות מוכרת בהדרכה קלינית 2026</b>.</p>
-                    <p class="mt-2">תוכלו לשאול אותי על מערכת השעות, תאריכי מבחנים ומטלות, הנחיות לחיסונים, דרישות ההתנסות הקלינית, אנשי קשר ועוד.</p>
-                    <p class="mt-2 text-xs text-gray-500">💡 טיפ: ניתן להקליד שאלה חופשית בתיבה למטה או ללחוץ על הכפתורים המהירים למעלה.</p>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
+                    <p class="font-bold text-blue-900 mb-1">שלום וברוכים הבאים! 👋</p>
+                    <p>אני <b>דיגי</b> - העוזרת הדיגיטלית של <b>קורס הדרכה קלינית 2026</b>.</p>
+                    <p class="mt-2">תוכלו לשאול אותי על מערכת השעות, תאריכי מבחנים ומטלות, הנחיות לחיסונים וטפסים, דרישות ההתנסות הקלינית, אנשי קשר ועוד.</p>
+                    <p class="mt-2 text-xs text-slate-500">💡 טיפ: ניתן להקליד שאלה חופשית בתיבה למטה או ללחוץ על הכפתורים המהירים למעלה.</p>
                 </div>
             </div>
         </div>
 
         <!-- Input Area -->
-        <div class="p-3 bg-white border-t border-gray-200 flex items-center space-x-2 space-x-reverse">
-            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-gray-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition">
-            <button onclick="sendMessage()" class="bg-teal-700 hover:bg-teal-800 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
+        <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2 space-x-reverse">
+            <input type="text" id="userInput" onkeypress="handleKeyPress(event)" placeholder="הקלידו את השאלה שלכם כאן..." class="flex-1 border border-slate-300 rounded-xl px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
+            <button onclick="sendMessage()" class="bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-xl font-semibold text-sm sm:text-base transition flex items-center justify-center space-x-1 space-x-reverse shadow-md">
                 <span>שלח</span>
                 <i class="fa-solid fa-paper-plane text-xs mr-1"></i>
             </button>
         </div>
 
         <!-- Footer -->
-        <footer class="bg-gray-100 text-center py-1.5 text-[11px] text-gray-500 border-t border-gray-200">
-            מרכזת הקורס: חגית נופר | דוא"ל: hagit.nuphar@sheba.health.gov.il | טלפון: 052-6666932
+        <footer class="bg-slate-100 text-center py-1.5 text-[11px] text-slate-500 border-t border-slate-200">
+            דיגי - העוזרת הדיגיטלית | מרכזת הקורס: חגית נופר | דוא"ל: hagit.nuphar@sheba.health.gov.il | טלפון: 052-6666932
         </footer>
     </div>
 
@@ -97,9 +100,10 @@
         // Knowledge Base Built from Course Documents
         const botKnowledge = {
             general: {
-                keywords: ["שלום", "היי", "מה קוראים", "מי אתה", "עזרה", "קורס", "מידע", "כללי"],
+                keywords: ["שלום", "היי", "מה קוראים", "מי אתה", "מי את", "דיגי", "עזרה", "קורס", "מידע", "כללי"],
                 response: `<b>קורס הדרכה קלינית 2026</b><br>
 בית הספר האקדמי לאחיות ע"ש זיוה טל, המרכז הרפואי שיבא תל השומר.<br><br>
+• <b>אני דיגי</b> - העוזרת הדיגיטלית של הקורס.<br>
 • <b>מרכזת הקורס:</b> חגית נופר (052-6666932 | hagit.nuphar@sheba.health.gov.il)<br>
 • <b>היקף הקורס:</b> 300 שעות לימוד (176 שעות עיוניות + 124 שעות התנסות קלינית וסופרוויז'ן).<br>
 • <b>ימי לימוד:</b> ימי חמישי, 08:00–15:00.<br><br>
@@ -137,7 +141,7 @@
 ⚠️ עמידה בהצלחה במבחן הפנימי ובמטלות היא תנאי סף להגשה לבחינה הממשלתית!`
             },
             tasks: {
-                keywords: ["מטלה", "מטלות", "עבודה", "קונפליקט", "כלי הדרכתי", "כלי לימודי", "רפלקציה", "קהילת ידע", "הגשה", "apa", "kahoot", "mentimeter"],
+                keywords: ["מטלה", "מטלות", "עבודה", "קונפליקט", "כלי הדרכתי", "כלי לימודי", "רפלקציה", "הגשה", "apa", "kahoot", "mentimeter"],
                 response: `📚 <b>מטלות הקורס:</b><br><br>
 1. <b>מטלה 1: ניתוח קונפליקט בתהליכי הדרכה (בכתב):</b><br>
 • ניתוח דילמה ערכית/אתית בהדרכה הקלינית.<br>
@@ -147,9 +151,7 @@
 • הצגת כלי מקורי בסופרוויז'ן (10 דק' הצגה + 5 דק' משוב).<br>
 • 🚫 <b>דגש חשוב:</b> אין להשתמש בכלים טכנולוגיים כמו Kahoot או Mentimeter!<br><br>
 3. <b>מטלה 3: מצגת רפלקציה על ההתנסות הקלינית:</b><br>
-• מצגת הכוללת: 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות.<br><br>
-4. <b>מטלה 4: קהילת ידע (Yammer/Viva Engage):</b><br>
-• העלאת פוסט (כ-10 משפטים) + תגובה ל-2 פוסטים של עמיתים.`
+• מצגת הכוללת: 5 הצלחות, 5 תחומים לשיפור, 5 תובנות אישיות ותמונות.`
             },
             clinical: {
                 keywords: ["התנסות", "התנסות קלינית", "סופרוויז'ן", "סופרויזן", "124 שעות", "100 שעות", "מנחה", "צפייה", "מחלקת אם", "שדה קליני"],
@@ -160,13 +162,14 @@
 • <b>הערכת ההתנסות:</b> ציון עובר הוא <b>70</b>. תחומיי "התנהגות מקצועית" ו"בטיחות" הם תנאי הכרחי לעובר!`
             },
             vaccines: {
-                keywords: ["חיסון", "חיסונים", "אישור", "אישורים", "ענת קשטן", "טופס ג", "משטרה", "בטיחות", "בריאות הלומדים", "מנטו", "שחפת"],
-                response: `💉 <b>דרישות קדם וחיסונים להתנסות הקלינית:</b><br><br>
-1. <b>אישור חיסונים (טופס ג'):</b> יש להעביר חתום ע"י מרפאת תעסוקה/לשכת בריאות לדוא"ל: <u>sheba.gimel@sheba.gov.il</u> עד חודש לפני תחילת ההתנסות.<br>
+                keywords: ["חיסון", "חיסונים", "אישור", "אישורים", "ענת קשטן", "טופס ג", "טפסים", "טופס", "משטרה", "בטיחות", "בריאות הלומדים", "מנטו", "שחפת"],
+                response: `💉 <b>דרישות קדם, טפסים וחיסונים להתנסות הקלינית:</b><br><br>
+📥 <b>הורדת טפסים:</b> את כל הטפסים וההנחיות <u>מורידים ממערכת ה-Moodle</u> (לא ממלאים אותם אונליין במודל). לאחר ההורדה ומילוי הטפסים יש להעבירם כמפורט להלן:<br><br>
+1. <b>אישור חיסונים (טופס ג'):</b> יש להוריד מהמודל, להחתים במרפאת תעסוקה/לשכת בריאות ולהעביר לדוא"ל: <u>sheba.gimel@sheba.gov.il</u> עד חודש לפני תחילת ההתנסות.<br>
 2. <b>אישורי משטרה:</b><br>
 • אישור היעדר עבירות אלימות כלפי חסרי ישע (לכולם).<br>
 • אישור היעדר עבירות מין (לגברים בלבד).<br>
-3. <b>אישור יציאה להתנסות:</b> שליחת טופס בקשה במודל + שיחה משולשת.<br><br>
+3. <b>אישור יציאה להתנסות:</b> שליחת טופס בקשה (הורדה מהמודל) למרכזת הקורס + שיחה משולשת.<br><br>
 📞 <b>רכזת בריאות הלומדים:</b> ענת קשטן (anat.kashtan@sheba.health.gov.il).`
             },
             contacts: {
@@ -179,11 +182,12 @@
 • <b>שכר לימוד ומזכירות:</b> מיכל פלג | Michal.Peleg@Sheba.health.org.il`
             },
             moodle: {
-                keywords: ["מודל", "moodle", "סיסמה", "שם משתמש", "תמיכה", "אתר", "קישור"],
+                keywords: ["מודל", "moodle", "סיסמה", "שם משתמש", "תמיכה", "אתר", "קישור", "טפסים במודל"],
                 response: `💻 <b>גישה למערכת Moodle (הקמפוס הדיגיטלי):</b><br><br>
-• <b>כתובת המערכת:</b> <a href="http://www.sns.sheba.co.il" target="_blank" class="text-teal-700 underline font-bold">www.sns.sheba.co.il</a><br>
+• <b>כתובת המערכת:</b> <a href="http://www.sns.sheba.co.il" target="_blank" class="text-blue-700 underline font-bold">www.sns.sheba.co.il</a><br>
 • <b>שם משתמש:</b> מספר תעודת זהות (ללא ספרת ביקורת).<br>
 • <b>סיסמה ראשונית:</b> תאריך לידה ב-6 ספרות (לדוגמה: 010198).<br>
+• 📄 <b>טפסים:</b> את כל הטפסים והנחיות החיסונים מורידים ישירות מהמודל.<br>
 • <b>תמיכה טכנית:</b> נינה ארוטיוניאן (Nina.Arutiunian@sheba.health.gov.il).`
             }
         };
@@ -224,7 +228,7 @@
             if (sender === 'user') {
                 msgDiv.className = 'flex items-start justify-end space-x-3 space-x-reverse';
                 msgDiv.innerHTML = `
-                    <div class="bg-teal-700 text-white p-3.5 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] sm:max-w-[75%] text-sm sm:text-base leading-relaxed">
+                    <div class="bg-blue-800 text-white p-3.5 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] sm:max-w-[75%] text-sm sm:text-base leading-relaxed">
                         ${escapeHTML(text)}
                     </div>
                     <div class="w-9 h-9 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
@@ -234,10 +238,10 @@
             } else {
                 msgDiv.className = 'flex items-start space-x-3 space-x-reverse';
                 msgDiv.innerHTML = `
-                    <div class="w-9 h-9 rounded-full bg-teal-700 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
+                    <div class="w-9 h-9 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow">
                         🤖
                     </div>
-                    <div class="bg-white border border-gray-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-gray-800 text-sm sm:text-base leading-relaxed">
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] sm:max-w-[75%] text-slate-800 text-sm sm:text-base leading-relaxed">
                         ${text}
                     </div>
                 `;
@@ -259,7 +263,7 @@
                 }
             }
 
-            return `מצטער, לא מצאתי תשובה מדויקת לשאלה זו במאגר המידע. 😅<br><br>
+            return `מצטערת, לא מצאתי תשובה מדויקת לשאלה זו במאגר המידע. 😅<br><br>
 אשמח שתפנו ישירות ל<b>חגית נופר</b>, מרכזת הקורס:<br>
 📞 טלפון: 052-6666932<br>
 📧 דוא"ל: hagit.nuphar@sheba.health.gov.il`;
